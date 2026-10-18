@@ -1,0 +1,45 @@
+:root{--bg:#0b0d12;--card:#141821;--line:#232a36;--text:#e8ecf3;--muted:#98a2b3;--accent:#ec4899;--accent2:#db2777;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--r:14px}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%),var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 18px 60px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:18px}
+.pill{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:99px;white-space:nowrap}
+.hero h1{font-size:clamp(26px,4.5vw,42px);line-height:1.1;margin:6px 0 8px;letter-spacing:-.03em}
+.hero p{color:var(--muted);margin:0 0 20px;max-width:680px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h2{font-size:15px;margin:0 0 12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
+input[type=text],textarea,select{width:100%;background:#0e1219;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font:inherit}
+textarea{min-height:140px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+input:focus,textarea:focus,select:focus{outline:2px solid color-mix(in srgb,var(--accent) 60%,transparent);border-color:transparent}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:6px 11px;font-size:13px;cursor:pointer;user-select:none;color:var(--text);margin:0}
+.chip input{accent-color:var(--accent);margin:0}
+button,.btn{appearance:none;border:0;border-radius:10px;padding:11px 16px;font:600 14px system-ui;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+button.ghost,.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+button:disabled{opacity:.55;cursor:wait}
+.drop{border:1.5px dashed var(--line);border-radius:12px;padding:18px;text-align:center;color:var(--muted);cursor:pointer;transition:.15s}
+.drop:hover,.drop.over{border-color:var(--accent);color:var(--text)}
+.drop img{max-width:100%;max-height:220px;border-radius:8px;display:block;margin:0 auto 8px}
+.muted{color:var(--muted)}.small{font-size:12px}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+.err{background:color-mix(in srgb,var(--bad) 14%,transparent);border:1px solid color-mix(in srgb,var(--bad) 40%,transparent);color:#fecaca;padding:10px 12px;border-radius:10px;margin-top:12px}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;border:1px solid currentColor}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.list li{background:#0e1219;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+pre{background:#07090d;border:1px solid var(--line);border-radius:10px;padding:12px;overflow:auto;font-size:12.5px;line-height:1.5;margin:0;white-space:pre-wrap;word-break:break-word}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.sec{margin-top:16px}.sec h3{font-size:14px;margin:0 0 8px}
+.spin{width:16px;height:16px;border:2px solid #fff6;border-top-color:#fff;border-radius:50%;animation:s .8s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+footer{margin-top:30px;color:var(--muted);font-size:12px;text-align:center}
+@media(max-width:560px){.pill{display:none}.wrap{padding:18px 14px 50px}}

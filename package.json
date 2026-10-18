@@ -1,0 +1,13 @@
+{
+  "name": "skillsmith",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forge spec-compliant Agent Skills (SKILL.md) from a one-line idea with Google Gemma 4, and validate any SKILL.md against the agentskills.io open standard. Web app, CLI and Agent Skill.",
+  "keywords": ["agent-skills", "skill-md", "ai-agents", "validator", "linter", "gemma", "gemma-4", "open-source", "hacktoberfest"],
+  "bin": { "skillsmith": "cli.js" },
+  "files": ["cli.js", "lib/", "api/_gemma.js", "skills/"],
+  "scripts": { "dev": "node server.js", "validate": "node cli.js validate skills/skillsmith" },
+  "engines": { "node": ">=18" },
+  "author": "Ayush Yadav",
+  "license": "MIT"
+}

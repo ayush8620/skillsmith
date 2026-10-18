@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillSmith · Forge & validate Agent Skills</title>
+<meta name="description" content="Turn a one-line idea into a spec-compliant Agent Skill (SKILL.md) with Google Gemma 4, and lint any SKILL.md against the agentskills.io standard.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚒️</text></svg>">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">⚒️</div>SkillSmith</div>
+    <span class="pill">Agent Skills open standard · Google Gemma 4</span>
+  </header>
+  <section class="hero">
+    <h1>Give any AI agent a new skill in 30 seconds.</h1>
+    <p>Agent Skills are folders with a <code>SKILL.md</code> that teach coding agents a task. SkillSmith <b>forges</b> a spec-compliant skill from a one-line idea with open-weight Gemma 4, checks it against the agentskills.io rules and auto-repairs it. It also <b>validates</b> any SKILL.md you paste. The same tools ship as a CLI and as a skill of their own.</p>
+  </section>
+  <div class="row" style="margin-bottom:12px"><button id="tabForge" type="button">⚒️ Forge a skill</button><button id="tabCheck" class="ghost" type="button">✅ Validate SKILL.md</button></div>
+  <div class="grid">
+    <div class="card" id="forgeCard">
+      <h2>Describe the skill</h2>
+      <label for="idea">What should the agent be able to do, and when?</label>
+      <textarea id="idea" style="min-height:120px;font-family:inherit;font-size:14px" placeholder="Check a web page for accessibility problems (alt text, contrast, labels) and suggest fixes. Use when the user asks for an a11y audit."></textarea>
+      <div class="row">
+        <div style="flex:1;min-width:150px"><label for="tools">Tools it may use (optional)</label><input type="text" id="tools" placeholder="node, npx, curl"></div>
+        <div style="flex:1;min-width:150px"><label for="author">Author (optional)</label><input type="text" id="author" placeholder="Your name"></div>
+      </div>
+      <div class="row" style="margin-top:16px"><button id="forge">Forge skill</button><button class="ghost" id="sample" type="button">Try a sample</button></div>
+      <div id="error"></div>
+    </div>
+    <div class="card" id="checkCard" style="display:none">
+      <h2>Paste a SKILL.md</h2>
+      <textarea id="md" style="min-height:300px" placeholder="---&#10;name: my-skill&#10;description: What it does. Use when …&#10;---&#10;# My skill"></textarea>
+      <label for="dir">Folder name (optional, must equal name)</label><input type="text" id="dir" placeholder="my-skill">
+      <div class="row" style="margin-top:16px"><button id="check">Validate</button><button class="ghost" id="bad" type="button">Load a broken example</button></div>
+      <div id="error2"></div>
+    </div>
+    <div class="card" id="out"><div class="empty">Your skill and its validation report appear here.</div></div>
+  </div>
+  <footer>SkillSmith is an open-source MIT project by Ayush Yadav · Built at MLH Hacktoberfest Hack Day Prayagraj 3.0</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
